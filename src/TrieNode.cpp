@@ -71,21 +71,20 @@ bool TrieNode::find(std::string str)
 // return the value associated with a str (default to ocurrence of words starting with str)
 int TrieNode::find_val(std::string str)
 {   
+    if(!find(str)) return -1; // verify word exist
+
     TrieNode* cur_node = this;
-    bool exist = false;
+
     for(int i = 0; i < str.length(); ++i)
     {   
-        exist = false;
         for(auto node : cur_node->next)
         {
             if(node->c == str[i])
             {
                 cur_node = node;
-                exist = true;
                 break;
             }
         }
-        if(!exist) return 0;
     }
     return cur_node->val;
 }
