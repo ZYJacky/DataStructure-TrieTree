@@ -2,7 +2,7 @@
 
 Simple implementation of a Trie tree in C++
 
-## Examples
+## Use Example
 
 ```
 Trie root;
